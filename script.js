@@ -32,5 +32,4 @@ document.querySelector('.schaar').addEventListener('click', () => {
     steen(2);
 })
 
-
-
+//for loop voor dramatisch effect
