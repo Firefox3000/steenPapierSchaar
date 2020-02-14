@@ -4,8 +4,8 @@
 }
 
 .guess div, .poepie div {
-    margin: 0 .6rem; 
-    padding: .6rem;
+    /* margin: 0 .6rem;  */
+    padding: 1rem 1.4rem;
     text-align: center;
     max-width: 5rem;
 }
