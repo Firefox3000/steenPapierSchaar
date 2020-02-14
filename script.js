@@ -6,11 +6,10 @@ function steen(guess) {
     document.querySelector('.result').innerHTML = (guess == x) ? 'tie' : (guess == x - 1 || guess == 2 && x == 0) ? 'loss' : 'win';
 }
 
-document.querySelectorAll('.guess')[0].childNodes.forEach(item => {
-    item.addEventListener('click', (e) => {
-        document.querySelector('.poepie .guess').innerHTML = e.target.innerHTML;
-        steen(Array.prototype.slice.call(document.querySelector('.guess').children).indexOf(document.getElementsByClassName(e.target.innerHTML)[0]));
-    })
+document.querySelector('.options').addEventListener('click', (e) => {
+    let bro = Array.prototype.slice.call(document.querySelector('.options').children).indexOf(document.getElementsByClassName(e.target.innerHTML)[0])
+    document.querySelector('.guess').innerHTML = y[bro];
+    steen(bro);
 });
 
 //for loop voor dramatisch effect

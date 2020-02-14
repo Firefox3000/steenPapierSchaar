@@ -1,13 +1,22 @@
-.guess, .poepie {
+.poepie {
     display: flex;
     flex-direction: row;
 }
 
-.guess div, .poepie div {
+.options {
+    display: flex;
+    flex-direction: row;
+}
+
+.options div {
+    width: 33%;
+}
+
+.options div, .poepie div {
     /* margin: 0 .6rem;  */
     padding: 1rem 1.4rem;
     text-align: center;
-    max-width: 5rem;
+    /* max-width: 5rem; */
 }
 
 .steen {
