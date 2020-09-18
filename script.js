@@ -1,12 +1,11 @@
-const y = ['steen', 'papier', 'schaar'];
+const y = ['steen', 'papier', 'schaar']
 
 document.querySelector('.options').addEventListener('click', (e) => {
-    const guess = Array.prototype.slice.call(document.querySelector('.options').children).indexOf(document.getElementsByClassName(e.target.innerHTML)[0])
-    document.querySelector('.guess').innerHTML = y[guess];
+  document.querySelector('.guess').innerHTML = e.target.innerHTML
+  const g = y.indexOf(e.target.innerHTML)
 
-    const x = Math.floor(Math.random() * 3);
-    document.querySelector('.ai').innerHTML = y[x];
-    document.querySelector('.result').innerHTML = (guess == x) ? 'tie' : (guess == x - 1 || guess == 2 && x == 0) ? 'loss' : 'win';
-});
-
-//for loop for dramatic effect
+  const x = ~~(Math.random() * 3)
+  document.querySelector('.ai').innerHTML = y[x]
+  document.querySelector('.result').innerHTML =
+    g == x ? 'tie' : g == x - 1 || (g == 2 && x == 0) ? 'loss' : 'win'
+})
