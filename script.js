@@ -1,11 +1,8 @@
-const y = ['steen', 'papier', 'schaar']
-
 document.querySelector('.options').addEventListener('click', (e) => {
+  const b = ~~(Math.random() * 3)
   document.querySelector('.guess').innerHTML = e.target.innerHTML
-  const g = y.indexOf(e.target.innerHTML)
-
-  const x = ~~(Math.random() * 3)
-  document.querySelector('.ai').innerHTML = y[x]
-  document.querySelector('.result').innerHTML =
-    g == x ? 'tie' : g == x - 1 || (g == 2 && x == 0) ? 'loss' : 'win'
+  document.querySelector('.ai').innerHTML = ['steen', 'papier', 'schaar'][b]
+  document.querySelector('.result').innerHTML = ['win', 'loss', 'tie'][
+    (e.target.dataset.index - b + 2) % 3
+  ]
 })
